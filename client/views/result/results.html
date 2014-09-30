@@ -1,0 +1,16 @@
+<template name="results">
+	<div class="panel panel-default">
+      <div class="panel-heading"><h4>Summary</h4></div>
+      
+      <div class="panel-body">
+      	{{#each resultList}}
+
+      		<h3>{{title}} - Reps: {{reps}} - Series: {{series}} - Weight: {{weight}}</h3>
+
+      	{{/each}}
+  
+      </div>
+  </div>
+
+
+</template>

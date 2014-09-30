@@ -1,0 +1,53 @@
+<template name="exercise">
+	<h3>Select today's exercises!</h3>
+	{{>category}}
+  <p><a class="btn btn-primary btn-lg next">Next!</a></p>
+</template>
+
+
+<template name="exerciseItem">
+	<div class="panel panel-default exerciseItem {{selected}}">
+  		<div class="panel-body">
+  		{{#if selected}}
+			<h4>{{title}} - Added!</h4>
+  		{{else}}
+  			<h4>{{title}}</h4>
+  		{{/if}}
+		</div>
+  	</div>
+</template>
+
+<template name="category">
+	{{#each categoryList}}
+		{{>categoryItem}}
+	{{/each}}
+</template>
+
+<template name="categoryItem">
+	<div class="panel panel-default">
+		<div class="panel-heading categoryItem"><h4>{{category}}</h4></div>
+  		{{#if selected_category}}
+  			{{#each exerciseList}}
+				{{>exerciseItem}}
+			{{/each}}
+  		{{/if}}
+  	</div>
+</template>
+
+<template name="createExercise">
+	<div class="jumbotron">
+  		<h3>Add exercise</h3>
+  		<div class="form-group">
+  			<label for="select" class="col-lg-2 control-label">Category</label>
+  			<div class="col-lg-10">
+  				<p><input type="text" id="inputCategory"></p>
+  			</div>
+    	
+    		<label for="select" class="col-lg-2 control-label">Title</label>
+    		<div class="col-lg-10">
+  				<p><input type="text"  id="inputTitle"></p>
+  			</div>
+  		</div>
+  		<p><a class="btn btn-primary btn-lg" id ="createButton">Create!</a></p>
+	</div>
+</template>

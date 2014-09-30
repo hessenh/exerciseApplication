@@ -1,0 +1,29 @@
+<template name="carousel">
+  {{#if pictures}}
+	<div id="myCarousel" class="carousel slide">
+  		<ol class="carousel-indicators">
+    		
+  		</ol>
+  <!-- Carousel items -->
+  		<div class="carousel-inner">
+          {{#each pictures}}
+            {{#if isFirst}}
+    		      <div class="item active">
+      			     <img src="/pictures/{{fileName}}" alt="" />
+      		    </div>
+            {{else}}
+              <div class="item">
+                 <img src="/pictures/{{fileName}}" alt="" />
+              </div>
+            {{/if}}
+          {{/each}}
+  		</div>
+  <!-- Carousel nav -->
+  		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	</div>
+  {{else}}
+    <h4>No pictures jet..</h4>
+  {{/if}}
+</template>
+

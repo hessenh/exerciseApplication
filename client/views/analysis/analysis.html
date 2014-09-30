@@ -1,0 +1,23 @@
+<template name="analysis">
+	{{#each analysisDateList}}
+		{{>workoutHistory}} 
+	{{/each}}
+</template>
+
+<template name="workoutHistory">
+	<div class="panel panel-default">
+		<div class="panel-heading workoutHistoryName {{selected_workoutHistoryName}}"><h4>{{date}} - {{name}}</h4></div>
+			{{#if selected_HistoryName}}
+
+				{{#each analysisList}}
+					{{>workoutHistoryItem}}
+				{{/each}}
+			{{/if}}
+  	</div>
+</template>
+
+<template name="workoutHistoryItem">
+	<div class="panel panel-default">
+		<div class="panel-heading workoutHistoryItem"><h4>{{title}}</h4></div>
+  	</div>
+</template>

@@ -1,0 +1,31 @@
+<template name="startWorkout">
+	{{#each activExercise}}
+    <div class="panel panel-default">
+      <div class="panel-heading"><h4>{{title}}</h4></div>
+      
+      <div class="panel-body">
+        <div class="form-group">
+          <label for="select" class="col-lg-2 control-label">Series</label>
+          <div class="col-lg-10">
+            <p><input type="text" id="inputSeries" value="{{series}}"></p>
+          </div>
+        
+          <label for="select" class="col-lg-2 control-label">Reps</label>
+          <div class="col-lg-10">
+            <p><input type="text"  id="inputReps" value="{{reps}}"></p>
+          </div>
+
+          <label for="select" class="col-lg-2 control-label">Weight</label>
+          <div class="col-lg-10">
+            <p><input type="text"  id="inputWeight" value="{{weight}}"></p>
+          </div>
+
+        </div>
+        <a class="btn btn-default btn-lg" id ="prevButton">Previous!</a>
+        <a class="btn btn-primary btn-lg" id ="nextButton">Next!</a>
+  
+      </div>
+  </div>
+		
+	{{/each}}
+</template>

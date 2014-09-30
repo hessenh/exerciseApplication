@@ -1,0 +1,33 @@
+<template name="workoutList">
+	{{#each workoutNames}}
+		<h4>{{>workoutName}}</h4>
+	{{/each}}
+</template>
+
+<template name="workoutName">
+	<div class="panel panel-default">
+		<div class="panel-heading workoutName {{selected_workoutName}}"><h4>{{name}}</h4></div>
+			{{#if selected_workoutName}}
+				{{#each workoutNameExerciseList}}
+					{{>workoutExercise}}
+				{{/each}}
+				<a class="btn btn-primary btn-lg" id ="startWorkout">Start!</a>
+        		<a class="btn btn-default btn-lg" id ="deleteWorkout">Remove!</a>
+			{{/if}}
+  	</div>
+</template>
+
+
+<template name="workoutExercise">
+	<div class="panel panel-default workoutExercise {{selected}}">
+  		<div class="panel-body">
+  		{{#if selected}}
+			<h4>{{this}} - Added!</h4>
+  		{{else}}
+  			<h4>{{this}}</h4>
+  		{{/if}}
+		</div>
+  	</div>
+</template>
+
+
